@@ -52,12 +52,15 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body class="bg-gray-50 font-sans text-gray-900" id="top">
 
     <header class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
         <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <img src="assets/images/ultrapatas.png" alt="Ultrapatas Logo" class="h-20 w-auto">
+            <a href="#top" class="hover:opacity-80 transition" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'}); return false;">
+                <img src="assets/images/ultrapatas.png" alt="Ultrapatas Logo" class="h-20 w-auto">
+            </a>
             <div class="hidden md:flex space-x-6 font-medium text-brandBlue">
+                <a href="#top" class="hover:text-brandPink transition" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'}); return false;">Início</a>
                 <a href="#servicos" class="hover:text-brandPink transition">Serviços</a>
                 <a href="#sobre" class="hover:text-brandPink transition hidden">Sobre</a>
                 <a href="#contato" class="hover:text-brandPink transition">Contato</a>
@@ -468,5 +471,23 @@
     <script src="../src/js/calendar.js"></script>
     <script src="../src/js/appointment.js"></script>
     <script src="../src/js/main.js"></script>
+    
+    <script>
+        // Garantir que o scroll para o topo funcione
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handler para links que apontam para #top
+            document.querySelectorAll('a[href="#top"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const topElement = document.getElementById('top');
+                    if (topElement) {
+                        topElement.scrollIntoView({behavior: 'smooth'});
+                    } else {
+                        window.scrollTo({top: 0, behavior: 'smooth'});
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
