@@ -63,7 +63,9 @@
             <div class="hidden md:flex space-x-6 font-medium text-brandBlue">
                 <a href="#top" class="hover:text-brandPink transition" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'}); return false;">Início</a>
                 <a href="#servicos" class="hover:text-brandPink transition">Serviços</a>
-                <a href="#sobre" class="hover:text-brandPink transition hidden">Sobre</a>
+                <a href="#galeria" class="hover:text-brandPink transition">Galeria</a>
+                <a href="#depoimentos" class="hover:text-brandPink transition">Avaliações</a>
+                <a href="#sobre" class="hover:text-brandPink transition italic">Sobre Mim</a>
                 <a href="#contato" class="hover:text-brandPink transition">Contato</a>
             </div>
             <a href="#agendamento" id="nav-cta" class="bg-brandPink text-white px-5 py-2 rounded-full font-bold hover:bg-pink-600 transition shadow-lg hidden"> <!-- Escondido até finalizar implementação   -->
@@ -82,19 +84,62 @@
                     <p class="mt-6 text-lg text-gray-600 max-w-lg">
                         Na <strong>Ultrapatas</strong>, unimos tecnologia de ponta e cuidado humanizado para entregar laudos precisos que salvam vidas.
                     </p>
-                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/5531973021608" id="hero-cta" class="bg-brandBlue text-white text-center px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition shadow-xl">
+                    <div class="mt-10 flex flex-col sm:flex-row items-center gap-4">
+                        <a href="https://wa.me/5531973021608" id="hero-cta" class="bg-brandBlue text-white text-center px-8 py-4 rounded-xl text-lg font-bold hover:scale-105 transition shadow-xl w-full sm:w-auto">
                             Falar com a Especialista
                         </a>
-                        <div class="flex items-center gap-2 text-brandPink font-semibold italic">
-                            <span>✨ Atendimento especializado</span>
-                        </div>
+                        <a href="https://www.instagram.com/ultrapatas/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-brandPink border-2 border-brandPink px-6 py-4 rounded-xl text-lg font-bold hover:bg-brandPink hover:text-white transition w-full sm:w-auto justify-center">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Instagram
+                        </a>
+                    </div>
+                    <div class="mt-6 flex items-center gap-2 text-brandPink font-semibold italic">
+                        <span>✨ Atendimento especializado</span>
                     </div>
                 </div>
-                <div class="lg:w-1/2 mt-12 lg:mt-0 relative">
-                    <div class="w-72 h-72 lg:w-96 lg:h-96 bg-brandLightBlue rounded-full absolute -z-10 blur-3xl opacity-50 top-0 right-0"></div>
-                    <div class="rounded-3xl border-8 border-white shadow-2xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&q=80&w=800" alt="Ultrassonografia Veterinária" class="w-full h-full object-cover">
+                <div class="lg:w-1/2 mt-12 lg:mt-0 relative flex justify-center items-center self-stretch">
+                    <div class="w-full h-full bg-brandLightBlue rounded-full absolute -z-10 blur-3xl opacity-30"></div>
+                    <div class="rounded-3xl border-8 border-white shadow-2xl overflow-hidden w-full h-full min-h-[400px]">
+                        <img src="assets/images/apresentacao2.png" alt="Ultrassonografia Veterinária" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="sobre" class="py-20 bg-white overflow-hidden">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/3 relative">
+                        <div class="absolute -inset-4 bg-brandPink/10 rounded-full blur-2xl -z-10"></div>
+                        <img src="assets/images/ultrapatas_redonda_logotipo.png" alt="Dra. Responsável" class="w-full max-w-sm mx-auto rounded-3xl shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition duration-500">
+                    </div>
+                    <div class="lg:w-2/3">
+                        <h2 class="text-3xl font-bold text-brandBlue mb-6 underline decoration-brandPink decoration-4 underline-offset-8">Sobre Mim</h2>
+                        <div class="space-y-4 text-gray-700 text-lg leading-relaxed text-justify">
+                            <p>
+                                Olá! Sou <strong>Anna Beatriz Cruz</strong>, responsável pela <strong>Ultrapatas</strong> e apaixonada pelos animais desde criança. Meu sonho sempre foi ser "médica de bicho" e hoje dedico minha carreira em transformar a tecnologia da ultrassonografia em cuidado real e personalizado para os pets. Meu compromisso é oferecer atendimento com precisão técnica e um olhar humano de quem faz o que ama.
+                            </p>
+                            <p>
+                                Acredito que cada exame é uma oportunidade de proporcionar conforto e até mesmo salvar a vida de um pet. Para isso, conto com equipamento de alta resolução e entrego laudos detalhados que auxiliam na escolha do melhor tratamento. Cada atendimento é único e realizado com empatia e respeito à vida confiada a mim.
+                            </p>
+                        </div>
+                        <div class="mt-10 flex flex-wrap gap-6 pt-6 border-t border-gray-100">
+                            <div>
+                                <span class="block font-bold text-brandBlue text-2xl">Mestrado</span>
+                                <span class="text-sm text-gray-500">em Diagnóstico por Imagem</span>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-brandBlue text-2xl">Hospitalar</span>
+                                <span class="text-sm text-gray-500">Experiência Avançada</span>
+                            </div>
+                            <div>
+                                <span class="block font-bold text-brandBlue text-2xl">+5k</span>
+                                <span class="text-sm text-gray-500">Exames Realizados</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,32 +150,136 @@
                 <h2 class="text-3xl font-bold text-brandBlue">Nossos Exames</h2>
                 <p class="text-gray-500 mt-2">Tecnologia avançada para diagnósticos rápidos</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-2xl mx-auto">
-                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink transition">
-                        <div class="text-4xl mb-4 text-brandPink">🐕</div>
-                        <h3 class="text-xl font-bold text-brandBlue mb-2">Ultrassom Abdominal</h3>
-                        <p class="text-gray-600 text-sm">Avaliação completa de órgãos internos, sistema urinário e digestivo.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-6xl mx-auto">
+                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+                        <div class="text-5xl mb-4 bg-brandLightBlue/30 w-16 h-16 flex items-center justify-center rounded-full text-brandPink">🐕</div>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Abdominal</h3>
+                        <p class="text-gray-600 text-sm">Avaliação completa dos órgãos da cavidade abdominal.</p>
                     </div>
-                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink transition">
-                        <div class="text-4xl mb-4 text-brandPink">🐶</div>
-                        <h3 class="text-xl font-bold text-brandBlue mb-2">Ultrassom Gestacional</h3>
-                        <p class="text-gray-600 text-sm">Acompanhamento completo da gestação com avaliação fetal e mensurações precisas.</p>
+                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+                        <div class="text-5xl mb-4 bg-brandLightBlue/30 w-16 h-16 flex items-center justify-center rounded-full text-brandPink">🐶</div>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Gestacional</h3>
+                        <p class="text-gray-600 text-sm">Confirmação de prenhez, saúde fetal e estimativa da idade gestacional.</p>
                     </div>
-                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink transition">
-                        <div class="text-4xl mb-4 text-brandPink">🦴</div>
-                        <h3 class="text-xl font-bold text-brandBlue mb-2">Ultrassom Cervical</h3>
-                        <p class="text-gray-600 text-sm">Avaliação das estruturas cervicais e pescoço, linfonodos e tecidos moles.</p>
+                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+                        <div class="text-5xl mb-4 bg-brandLightBlue/30 w-16 h-16 flex items-center justify-center rounded-full text-brandPink">🦴</div>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Cervical</h3>
+                        <p class="text-gray-600 text-sm">Avaliação completa das estruturas do pescoço.</p>
                     </div>
-                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink transition">
-                        <div class="mb-4 flex justify-center text-brandPink">
-                            <svg class="h-12 w-12" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+                        <div class="mb-4 bg-brandLightBlue/30 w-16 h-16 flex items-center justify-center rounded-full text-brandPink">
+                            <svg class="h-10 w-10 px-1" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M4 16C10 7 20 2 32 2C44 2 54 7 60 16C54 25 44 30 32 30C20 30 10 25 4 16Z" stroke="currentColor" stroke-width="3" fill="currentColor" fill-opacity="0.12"/>
                                 <circle cx="32" cy="16" r="8" fill="currentColor" fill-opacity="0.18"/>
                                 <rect x="30" y="7" width="4" height="18" rx="2" fill="currentColor"/>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-bold text-brandBlue mb-2">Ultrassom Ocular</h3>
-                        <p class="text-gray-600 text-sm">Exame oftálmico por imagem para avaliação de estruturas internas do olho.</p>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Ocular</h3>
+                        <p class="text-gray-600 text-sm">Avaliação das estruturas internas do globo ocular e órbita.</p>
+                    </div>
+                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+                        <div class="text-5xl mb-4 bg-brandLightBlue/30 w-16 h-16 flex items-center justify-center rounded-full text-brandPink">❤️</div>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Doppler</h3>
+                        <p class="text-gray-600 text-sm">Avaliação detalhada do fluxo sanguíneo em órgãos e vasos.</p>
+                    </div>
+                    <div class="p-8 border border-gray-100 rounded-2xl bg-gray-50 hover:border-brandPink hover:shadow-xl transition-all duration-300 flex flex-col items-center">
+                        <div class="text-5xl mb-4 bg-brandLightBlue/30 w-16 h-16 flex items-center justify-center rounded-full text-brandPink">💉</div>
+                        <h3 class="text-xl font-bold text-brandBlue mb-2">Intervencionista</h3>
+                        <p class="text-gray-600 text-sm">Citologia, biopsia, cistocentese e drenagens guiadas por ultrassom.</p>
+                    </div>
+                </div>
+            </div>
+        <section id="galeria" class="py-20 bg-gray-50 mt-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-brandBlue">Galeria de Fotos</h2>
+                <div class="w-16 h-1 bg-brandPink mx-auto mt-4 mb-8"></div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="aspect-square bg-gray-200 rounded-2xl overflow-hidden shadow-md group border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1576201836106-cf1758af1c97?auto=format&fit=crop&q=80&w=400" alt="Exame veterinário" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="aspect-square bg-gray-200 rounded-2xl overflow-hidden shadow-md group border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1599443015574-be5fe8a05783?auto=format&fit=crop&q=80&w=400" alt="Pet paciente" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="aspect-square bg-gray-200 rounded-2xl overflow-hidden shadow-md group border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1581888227599-779811939961?auto=format&fit=crop&q=80&w=400" alt="Consultório" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="aspect-square bg-gray-200 rounded-2xl overflow-hidden shadow-md group border-4 border-white">
+                        <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=400" alt="Cuidado pet" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                </div>
+                <p class="mt-6 text-sm text-gray-500 italic">Compromisso com o bem-estar e a saúde do seu melhor amigo.</p>
+            </div>
+        </section>
+
+        <!-- Depoimentos (Google Meu Negócio Style) -->
+        <section id="depoimentos" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                    <div class="text-left">
+                        <h2 class="text-3xl font-bold text-brandBlue">O que dizem nossos clientes</h2>
+                        <div class="flex items-center mt-2 text-yellow-400">
+                            <span class="text-gray-900 font-bold mr-2 text-xl">5.0</span>
+                            <div class="flex">
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.784-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            </div>
+                            <span class="ml-2 text-gray-500 text-sm">Com base em avaliações do Google</span>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/search?q=Ultrapatas+Ultrassonografia+Veterinária#lrd=0x0:0x0,1" target="_blank" class="text-brandBlue font-semibold hover:underline flex items-center gap-1 mt-4 md:mt-0">
+                        Ver todas as avaliações
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Feedback 1 -->
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-brandBlue text-white rounded-full flex items-center justify-center font-bold mr-3">M</div>
+                            <div>
+                                <h4 class="font-bold text-sm">Mariana Silva</h4>
+                                <div class="flex text-yellow-400 text-xs">
+                                    ★★★★★
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed italic">
+                            "Excelente atendimento! A doutora foi super paciente com o meu gato, que é muito arisco. O laudo saiu rapidinho e foi fundamental pro diagnóstico."
+                        </p>
+                    </div>
+                    <!-- Feedback 2 -->
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-sm border border-gray-100 border-b-4 border-b-brandPink">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-brandPink text-white rounded-full flex items-center justify-center font-bold mr-3">R</div>
+                            <div>
+                                <h4 class="font-bold text-sm">Ricardo Oliveira</h4>
+                                <div class="flex text-yellow-400 text-xs">
+                                    ★★★★★
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed italic">
+                            "Melhor lugar de BH para fazer ultrassom. Equipamento de primeira e profissionalismo impecável. Recomendo de olhos fechados!"
+                        </p>
+                    </div>
+                    <!-- Feedback 3 -->
+                    <div class="p-6 bg-gray-50 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-gray-300 text-white rounded-full flex items-center justify-center font-bold mr-3">C</div>
+                            <div>
+                                <h4 class="font-bold text-sm">Carla Mendes</h4>
+                                <div class="flex text-yellow-400 text-xs">
+                                    ★★★★★
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed italic">
+                            "Fiz o acompanhamento gestacional da minha cachorrinha e amei. Super atenciosa, explicou tudo durante o exame. Nota 10!"
+                        </p>
                     </div>
                 </div>
             </div>
@@ -449,7 +598,9 @@
     <footer id="contato" class="bg-brandBlue text-white py-12">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-4 text-left">
-                <img src="assets/images/ultrapatas_redonda_logotipo.png" alt="Ultrapatas" class="h-40 w-auto shrink-0">
+                <div class="bg-white rounded-full p-2 flex items-center justify-center shrink-0 shadow-lg">
+                    <img src="assets/images/ultrapatas_redonda_logotipo.png" alt="Ultrapatas" class="h-32 w-32 object-contain">
+                </div>
                 <div>
                     <p>Ultrapatas Ultrassonografia Veterinária</p>
                     <p class="text-blue-200">CRMV-MG: 30624</p>
@@ -461,6 +612,12 @@
                 <p class="mt-4 font-bold">Contato:</p>
                 <p>📱 (31) 97402-1608</p>
                 <p>✉️ contato@ultrapatas.com.br</p>
+                <a href="https://www.instagram.com/ultrapatas/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center mt-2 hover:text-brandPink transition">
+                    <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    @ultrapatas
+                </a>
             </div>
         </div>
         <div class="text-center mt-12 pt-8 border-t border-blue-400/30 text-sm opacity-70">
