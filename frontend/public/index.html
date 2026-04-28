@@ -72,6 +72,122 @@
         .gradient-bg {
             background: linear-gradient(135deg, #0077b6 0%, #fb6f92 100%);
         }
+
+        /* WhatsApp Lead Capture Styles */
+        .whatsapp-link {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 15px;
+            right: 15px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 1px 1px 2px #888;
+            z-index: 999999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .whatsapp-link:hover {
+            background-color: #1ebe57;
+            color: white;
+        }
+
+        .popup-form-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 30px 20px 20px 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            z-index: 1000000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+
+        .form-title {
+            background-color: #25d366;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            margin: -30px -20px 20px -20px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+            z-index: 1000001;
+        }
+
+        .popup-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .popup-form input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .popup-form button[type="submit"] {
+            padding: 12px;
+            background-color: #ffffff;
+            color: #25d366;
+            border: 2px solid #25d366;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .popup-form button[type="submit"]:hover {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .error-message,
+        .status-message,
+        .loading-message {
+            font-size: 14px;
+            display: none;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        .status-message {
+            color: green;
+        }
+
+        .loading-message {
+            color: #25d366;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-900" id="top">
@@ -713,6 +829,33 @@
         </div>
     </footer>
 
+    <!-- Botão flutuante do WhatsApp -->
+    <a href="#" class="whatsapp-link" id="openFormBtn">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Formulário Pop-up -->
+    <div class="popup-form-container" id="popupForm">
+        <span class="close-btn" id="closeFormBtn">&times;</span>
+        <div class="form-title">Agende pelo WhatsApp</div>
+        <form class="popup-form" id="whatsappForm">
+            <input type="text" placeholder="Nome" id="nome" name="nome" required />
+            <input type="tel" placeholder="Telefone" id="telefone" name="telefone" required />
+            <input type="email" placeholder="Email" id="email" name="email" required />
+            <input type="hidden" id="data" name="data" />
+            <input type="hidden" id="utm_source" name="utm_source" />
+            <input type="hidden" id="utm_medium" name="utm_medium" />
+            <input type="hidden" id="utm_campaign" name="utm_campaign" />
+            <input type="hidden" id="utm_term" name="utm_term" />
+            <input type="hidden" id="utm_content" name="utm_content" />
+            <input type="hidden" id="gclid" name="gclid" />
+            <button type="submit">Enviar WhatsApp</button>
+            <p class="error-message" id="error">Por favor, preencha todos os campos obrigatórios.</p>
+            <p class="status-message" id="status">Formulário enviado com sucesso!</p>
+            <p class="loading-message" id="loading">Enviando...</p>
+        </form>
+    </div>
+
     <!-- Scripts -->
     <script src="../src/js/calendar.js"></script>
     <script src="../src/js/appointment.js"></script>
@@ -750,6 +893,105 @@
                     }
                 });
             });
+
+            // Lógica do Formulário WhatsApp Lead Capture
+            function getURLParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param) || "";
+            }
+
+            function preencherCamposHidden() {
+                document.getElementById("utm_source").value = getURLParam("utm_source");
+                document.getElementById("utm_medium").value = getURLParam("utm_medium");
+                document.getElementById("utm_campaign").value = getURLParam("utm_campaign");
+                document.getElementById("utm_term").value = getURLParam("utm_term");
+                document.getElementById("utm_content").value = getURLParam("utm_content");
+                document.getElementById("gclid").value = getURLParam("gclid");
+                document.getElementById("data").value = new Date().toISOString();
+            }
+
+            const openFormBtn = document.getElementById("openFormBtn");
+            const popupFormContainer = document.getElementById("popupForm");
+            const closeFormBtn = document.getElementById("closeFormBtn");
+
+            if (openFormBtn) {
+                openFormBtn.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    preencherCamposHidden();
+                    popupFormContainer.style.display = "block";
+                });
+            }
+
+            if (closeFormBtn) {
+                closeFormBtn.addEventListener("click", () => {
+                    popupFormContainer.style.display = "none";
+                    clearMessages();
+                });
+            }
+
+            function clearMessages() {
+                document.getElementById("error").style.display = "none";
+                document.getElementById("status").style.display = "none";
+                document.getElementById("loading").style.display = "none";
+            }
+
+            const wppForm = document.getElementById("whatsappForm");
+            if (wppForm) {
+                wppForm.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    clearMessages();
+
+                    const nome = document.getElementById("nome").value.trim();
+                    const telefone = document.getElementById("telefone").value.trim();
+                    const email = document.getElementById("email").value.trim();
+
+                    if (!nome || !telefone || !email) {
+                        document.getElementById("error").style.display = "block";
+                        return;
+                    }
+
+                    document.getElementById("loading").style.display = "block";
+
+                    const data = {
+                        nome: nome,
+                        telefone: telefone,
+                        email: email,
+                        data: document.getElementById("data").value,
+                        utm_source: document.getElementById("utm_source").value,
+                        utm_medium: document.getElementById("utm_medium").value,
+                        utm_campaign: document.getElementById("utm_campaign").value,
+                        utm_term: document.getElementById("utm_term").value,
+                        utm_content: document.getElementById("utm_content").value,
+                        gclid: document.getElementById("gclid").value,
+                        origem: window.location.href,
+                    };
+
+                    sendToWebhook(data);
+
+                    setTimeout(() => {
+                        document.getElementById("loading").style.display = "none";
+                        document.getElementById("status").style.display = "block";
+                        setTimeout(() => {
+                            popupFormContainer.style.display = "none";
+                            clearMessages();
+                            window.location.href = `https://wa.me/5531974021608`;
+                        }, 1000);
+                    }, 1500);
+                });
+            }
+
+            function sendToWebhook(data) {
+                const webhookURL = "https://script.google.com/macros/s/AKfycbyWX-fy6oFmIDrscKeTLfymxLhcwuZAQEYZ2GEGSYbB3cY0iz47oQ4az826Ffc57ujU3w/exec";
+
+                const formBody = new URLSearchParams(data).toString();
+                const blob = new Blob([formBody], {
+                    type: "application/x-www-form-urlencoded;charset=UTF-8",
+                });
+
+                if (!navigator.sendBeacon(webhookURL, blob)) {
+                    console.warn("sendBeacon failed, você pode implementar fallback aqui");
+                }
+            }
         });
     </script>
 </body>
