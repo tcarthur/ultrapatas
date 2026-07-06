@@ -67,7 +67,7 @@
     <header class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50">
         <nav class="container mx-auto px-4 py-2 flex justify-between items-center">
             <img src="assets/images/ultrapatas.png" alt="Ultrapatas Logo" class="h-16 w-auto">
-            <a href="https://wa.me/5531973021608?text=Olá! Vim pelo site e gostaria de agendar um ultrassom." class="bg-brandGreen text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition shadow-md">
+            <a href="https://wa.me/5531974021608?text=Ol%C3%A1!%20Somos%20a%20Ultrapatas%2C%20especialistas%20em%20ultrassonografia%20veterin%C3%A1ria%20domiciliar%20em%20Belo%20Horizonte%20e%20regi%C3%A3o.%20N%C3%A3o%20realizamos%20consulta%20cl%C3%ADnica%2C%20vacina%20ou%20raio%20X.%20Para%20agilizar%20seu%20atendimento%2C%20envie%3A%0Aseu%20nome%3A%0Anome%20do%20pet%3A%0Aesp%C3%A9cie%3A%0Abairro%3A%0Amotivo%20do%20exame%3A%0Ae%20se%20j%C3%A1%20possui%20pedido%20veterin%C3%A1rio." class="bg-brandGreen text-white px-6 py-2 rounded-full font-bold hover:scale-105 transition shadow-md">
                 <i class="fa-brands fa-whatsapp mr-2"></i>Agendar Agora
             </a>
         </nav>
@@ -90,7 +90,7 @@
                         <a href="#leads" onclick="document.getElementById('openFormBtn').click()" class="bg-brandBlue text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-blue-700 transition shadow-xl flex items-center justify-center">
                             Sou Tutor: Agendar para meu Pet
                         </a>
-                        <a href="https://wa.me/5531973021608?text=Olá! Sou veterinário/clínica parceira e gostaria de informações sobre parcerias." class="bg-white text-brandBlue border-2 border-brandBlue px-8 py-4 rounded-xl text-lg font-bold hover:bg-brandBlue hover:text-white transition flex items-center justify-center">
+                        <a href="https://wa.me/5531974021608?text=Ol%C3%A1!%20Somos%20a%20Ultrapatas%2C%20especialistas%20em%20ultrassonografia%20veterin%C3%A1ria%20domiciliar%20em%20Belo%20Horizonte%20e%20regi%C3%A3o.%20N%C3%A3o%20realizamos%20consulta%20cl%C3%ADnica%2C%20vacina%20ou%20raio%20X.%20Para%20agilizar%20seu%20atendimento%2C%20envie%3A%0Aseu%20nome%3A%0Anome%20do%20pet%3A%0Aesp%C3%A9cie%3A%0Abairro%3A%0Amotivo%20do%20exame%3A%0Ae%20se%20j%C3%A1%20possui%20pedido%20veterin%C3%A1rio." class="bg-white text-brandBlue border-2 border-brandBlue px-8 py-4 rounded-xl text-lg font-bold hover:bg-brandBlue hover:text-white transition flex items-center justify-center">
                             Sou Veterinário / Clínica Parceira
                         </a>
                     </div>
@@ -240,7 +240,7 @@
     </main>
 
     <!-- Botão flutuante do WhatsApp Otimizado -->
-    <a href="https://wa.me/5531974021608?text=Olá! Vim pelo site e gostaria de agendar um ultrassom." class="whatsapp-link fixed bottom-6 right-6 z-[60] bg-brandGreen text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition shrink-0" id="openFormBtn">
+    <a href="https://wa.me/5531974021608?text=Ol%C3%A1!%20Somos%20a%20Ultrapatas%2C%20especialistas%20em%20ultrassonografia%20veterin%C3%A1ria%20domiciliar%20em%20Belo%20Horizonte%20e%20regi%C3%A3o.%20N%C3%A3o%20realizamos%20consulta%20cl%C3%ADnica%2C%20vacina%20ou%20raio%20X.%20Para%20agilizar%20seu%20atendimento%2C%20envie%3A%0Aseu%20nome%3A%0Anome%20do%20pet%3A%0Aesp%C3%A9cie%3A%0Abairro%3A%0Amotivo%20do%20exame%3A%0Ae%20se%20j%C3%A1%20possui%20pedido%20veterin%C3%A1rio." class="whatsapp-link fixed bottom-6 right-6 z-[60] bg-brandGreen text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition shrink-0" id="openFormBtn">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -306,7 +306,8 @@
                     method: "POST",
                     body: new URLSearchParams(data)
                 }).finally(() => {
-                    window.location.href = `https://wa.me/5531974021608?text=Olá! Sou ${data.nome} e gostaria de agendar um ultrassom para meu pet.`;
+                    const message = encodeURIComponent("Olá! Somos a Ultrapatas, especialistas em ultrassonografia veterinária domiciliar em Belo Horizonte e região. Não realizamos consulta clínica, vacina ou raio X. Para agilizar seu atendimento, envie:\nseu nome:\nnome do pet:\nespécie:\nbairro:\nmotivo do exame:\ne se já possui pedido veterinário.");
+                    window.location.href = `https://wa.me/5531974021608?text=${message}`;
                 });
             });
         });

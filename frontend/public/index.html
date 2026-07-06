@@ -863,7 +863,8 @@
                         setTimeout(() => {
                             popupFormContainer.style.display = "none";
                             clearMessages();
-                            window.location.href = `https://wa.me/5531974021608`;
+                            const message = encodeURIComponent("Olá! Somos a Ultrapatas, especialistas em ultrassonografia veterinária domiciliar em Belo Horizonte e região. Não realizamos consulta clínica, vacina ou raio X. Para agilizar seu atendimento, envie:\nseu nome:\nnome do pet:\nespécie:\nbairro:\nmotivo do exame:\ne se já possui pedido veterinário.");
+                            window.location.href = `https://wa.me/5531974021608?text=${message}`;
                         }, 1000);
                     }, 1500);
                 });
